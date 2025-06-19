@@ -1,8 +1,21 @@
 
 // Default configuration (used in development or if external config is not available)
 const defaultConfig = {
-  regionLoginAppUrl: 'https://3e45f65f-fe86-4af7-8b5b-e598b0f261ea.e1-us-east-azure.preview-dv.choreoapps.dev/', // URL to the region-login-app (US region app by default)
-  // You can add other configuration options for the website app here
+  // Region-specific login app URLs
+  regions: {
+    US: {
+      url: 'https://3e45f65f-fe86-4af7-8b5b-e598b0f261ea.e1-us-east-azure.preview-dv.choreoapps.dev/',
+      name: 'United States'
+    },
+    EU: {
+      url: 'https://98ffb678-b705-486e-9d13-9b43b046b242.e1-eu-central-cdp.dv.choreoapps.dev/',
+      name: 'Europe'
+    }
+  },
+  // Default region to use if geo-detection fails
+  defaultRegion: 'US',
+  // Flag to enable/disable geo-based region detection
+  enableGeoDetection: true
 };
 
 // Get runtime configuration from window object if available (set by the mounted config.js)
