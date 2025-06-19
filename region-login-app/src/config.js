@@ -4,12 +4,12 @@ const config = {
   regions: {
     US: {
       name: 'United States',
-      url: 'https://us-app.example.com',
+      url: 'https://3e45f65f-fe86-4af7-8b5b-e598b0f261ea.e1-us-east-azure.preview-dv.choreoapps.dev/',
       description: 'US Region Server'
     },
     EU: {
       name: 'Europe',
-      url: 'https://eu-app.example.com',
+      url: 'https://98ffb678-b705-486e-9d13-9b43b046b242.e1-eu-central-cdp.dv.choreoapps.dev/',
       description: 'EU Region Server'
     }
   }
