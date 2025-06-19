@@ -95,10 +95,36 @@ cd ../website && npm run build
 
 2. Deploy the built apps to their respective hosting environments
 
-3. Update the `website/src/config.js` file to point to the deployed URL of the region-login-app
+3. For production deployment with externalized configuration:
+   - The apps are configured to load external configuration from the public/config/config.js file
+   - This file can be mounted at runtime in containerized environments like Choreo.dev
+   - Example configuration for website app:
+   ```javascript
+   window.RUNTIME_CONFIG = {
+     regionLoginAppUrl: 'https://your-deployed-login-app-url.choreoapps.dev'
+   };
+   ```
+   - Example configuration for region-login-app:
+   ```javascript
+   window.RUNTIME_CONFIG = {
+     regions: {
+       US: {
+         name: 'United States',
+         url: 'https://us-app-url.choreoapps.dev/',
+         description: 'US Region Server'
+       },
+       EU: {
+         name: 'Europe',
+         url: 'https://eu-app-url.choreoapps.dev/',
+         description: 'EU Region Server'
+       }
+     }
+   };
+   ```
 
 ## Notes
 
 - In a real-world scenario, you would deploy these apps to separate domains/subdomains
 - Cross-Origin Resource Sharing (CORS) might need to be configured for proper iframe communication
 - Consider adding authentication mechanisms for secure communication between the apps
+- When deploying to Choreo.dev, you can mount the external configuration file to `/usr/share/nginx/html/config/config.js`

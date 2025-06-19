@@ -1,6 +1,7 @@
 // Configuration file for the application
-const config = {
-  // Region URLs - replace with your actual application URLs
+
+// Default configuration (used in development or if external config is not available)
+const defaultConfig = {
   regions: {
     US: {
       name: 'United States',
@@ -14,5 +15,17 @@ const config = {
     }
   }
 };
+
+// Get runtime configuration from window object if available (set by the mounted config.js)
+const getRuntimeConfig = () => {
+  if (window.RUNTIME_CONFIG) {
+    console.log('Using runtime configuration from mounted config.js');
+    return window.RUNTIME_CONFIG;
+  }
+  console.log('Using default configuration');
+  return defaultConfig;
+};
+
+const config = getRuntimeConfig();
 
 export default config;
