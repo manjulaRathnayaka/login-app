@@ -1,0 +1,29 @@
+
+.app-main {
+  min-height: calc(100vh - 56px);
+  padding: 20px 0;
+  background-color: #f8f9fa;
+}
+
+.login-frame-card {
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.iframe-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+iframe {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .login-frame-card {
+    max-width: 95%;
+  }
+}
