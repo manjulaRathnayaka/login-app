@@ -1,7 +1,7 @@
 
 // Default configuration (used in development or if external config is not available)
 const defaultConfig = {
-  regionLoginAppUrl: 'http://localhost:3000', // URL to the region-login-app
+  regionLoginAppUrl: 'https://3e45f65f-fe86-4af7-8b5b-e598b0f261ea.e1-us-east-azure.preview-dv.choreoapps.dev/', // URL to the region-login-app (US region app by default)
   // You can add other configuration options for the website app here
 };
 
